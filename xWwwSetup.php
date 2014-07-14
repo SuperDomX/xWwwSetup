@@ -13,7 +13,7 @@
 class xWwwSetup extends Xengine {
 
 	function __construct($c){
-		parent::__construct($c);
+		// parent::__construct($c);
 	}
 
 	function dbSync(){
@@ -432,6 +432,9 @@ class xWwwSetup extends Xengine {
 		}
 
 		function install(){
+
+			 
+
 			ini_set('display_errors', 1);
 			$ERROR['msg'] =false;
 			$ERROR['no'] =false;
@@ -444,6 +447,9 @@ class xWwwSetup extends Xengine {
 				'pass'     => '',
 				'prefix'   => 'sdx' 
 			);
+
+			// $this->set('DB',$DB);
+
 
 			if(isset($_POST['DB'])){
 

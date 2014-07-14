@@ -1,3 +1,6 @@
+{if $atBackDoor}
+	{include file="./x.install.tpl"}
+{else}
 	<style><!--
 		.chat-bubble {
 		  background-color: rgba(255,255,255,0.75);
@@ -119,7 +122,7 @@
 		<tr>
 			<td align="center" valign="middle" style="position: relative;">
 	 			<div class="chat-bubble" id="sdx-bubble">
-				  <img src="bin/images/logos/sdx.png"/> 
+				  <img src="/bin/images/logos/sdx.png"/> 
 				  <div class="chat-bubble-arrow-border"></div>
 				  <div class="chat-bubble-arrow"></div>
 				</div>
@@ -136,3 +139,4 @@
 			document.getElementById('sdx-bubble').style.display = state;
 		}
 	</script>
+{/if}
