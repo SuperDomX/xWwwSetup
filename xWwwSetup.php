@@ -156,7 +156,11 @@ class xWwwSetup extends Xengine {
 		$fmtime = filemtime($this->_CFG['dir']['cfg'].'/cfg.x.inc');
 
 		// Make sure these are set...
+		// Not Able to Write Array's Like this.
 		$check = ['site_name','site_moto','site_copyright'];
+
+
+
 		foreach ($check as $key => $value) {
 			if(!isset($this->_SET['CONFIG'][$value])){
 				$cfg = explode('_', $value);
@@ -425,10 +429,7 @@ class xWwwSetup extends Xengine {
 		}
 
 		function install(){
-
-			 
-
-			ini_set('display_errors', 1);
+			//ini_set('display_errors', 1);
 			$ERROR['msg'] =false;
 			$ERROR['no'] =false;
 			$this->_comment("Installing Xengine Go");
