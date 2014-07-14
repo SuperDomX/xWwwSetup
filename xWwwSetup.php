@@ -53,7 +53,8 @@ class xWwwSetup extends Xengine {
 
 	function autoRun($X){
 		// Read a file containing domains, add to list if not in it.
-		// @TODO: The purpose here is to be able to setup different domains on a single install of superdom
+		// TODO: The purpose here is to be able to setup different domains on a single install of superdom
+
 		$icons = ['16','24','32','48','64','128','256','512'];
 		foreach ($icons as $k => $v) {
 			$this->_SET['ICON'][$v] = $this->_CFG['dir']['icons'].'/'.$v.'x'.$v.'/';
