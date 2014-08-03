@@ -1,14 +1,17 @@
 <?php
 /**
  * @author i@xtiv.net
- * @name www Setup
- * @desc Setup 'Out-of-the-Box' www Settings
- * @version  v1(11.01.11@17.44)
+ * @name Settings
+ * @desc Setup Your Domain's www Settings
+ * @version  v2.0.0
  * @icon Tools.png
  * @mini wrench
  * @see construct
  * @link wwwSetup
  * @todo Make an interface!
+ * @release beta
+ * @todo
+ * @beta true
  */
 class xWwwSetup extends Xengine {
 
@@ -53,27 +56,31 @@ class xWwwSetup extends Xengine {
 
 	function autoRun($X){
 		// The purpose here is to be able to setup different domains on a single installation of superdom
-
-		if($q = $X->Q){
+ 
+ 		$q = $this->q(); 
+		if($q == $X->Q){
 			$config = $X->Q->Select('*','config');
 	    	foreach($config as $k => $v){
 	    		$configs[$v['config_option']] = $v['config_value'];
 	    		$this->set($v['config_option'],$v['config_value']);
 	    	}
-	    	$this->set('CONFIG',$configs);
-
-
-
-
-
+	    	$this->set('CONFIG',$configs); 
 		}else{
 			$this->set('www_costume_admin','adminzone');
 			$this->set('www_themex_admin','@panel');
 		}
 
-		$style = ($X->atBackDoor) ? $this->_SET['www_costume_admin'] : $this->_SET['www_costume'];
-		
+
+		// @DEPRECIATED
+		$style = ($X->atBackDoor) ? $this->_SET['www_costume_admin'] : $this->_SET['www_costume']; 
 		$this->_SET['HTML']['HEAD']['STYLE'] = $this->style($style);
+
+
+
+		if( isset($_POST['config']) && $this->Key['is']['admin'] )
+			return $this->saveSettings();
+
+		return $this->_SET;
 		
 		// function addDom($file){
 		// 	file_put_contents($file, HTTP_HOST."\n", FILE_APPEND | LOCK_EX);
@@ -95,7 +102,6 @@ class xWwwSetup extends Xengine {
 		// 	addDom($file);
 		// }
 
-		return $this->_SET;
 	}
 
 	public function dump($var)
@@ -426,6 +432,10 @@ class xWwwSetup extends Xengine {
 		        }
 		        $this->set('costumez',$data);
 		    }
+		}
+
+		function settings(){
+
 		}
 
 		function install(){

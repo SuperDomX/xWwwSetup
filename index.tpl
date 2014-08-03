@@ -1,44 +1,31 @@
-	<link rel="stylesheet" type="text/css" href="/bin/js/ext-3.2.1/examples/ux/fileuploadfield/css/fileuploadfield.css"/>
- 
-<style>
-input {
-	width: 75%;
-}
+<div class="row">
+    <div class="col-md-12">
+        <section class="widget">
+            <div class="jumbotron">
+                <h1><i class="fa fa-wrench"></i> Manage Your WWW Settings</h1>
+                <p>
+                    
+                    <a href="/{$toBackDoor}/{$Xtra}/buildCss" class="btn btn-success  btn-lg pull-right"> 
+						<i class="fa fa-css3"></i> Minify CSS
+					</a>
+				 
+					<a href="/{$toBackDoor}/{$Xtra}/buildJs" class="btn btn-info btn-lg pull-right"> 
+						<i class="fa fa-coffee"></i> Minify Javascript
+					</a>
+			 	
+					<!-- <button onclick="location = '#/{$toBackDoor}/update/syncDb'" class="btn btn-warning"> 
+						Build Missing Tables
+					</button>   -->
+                </p>
+                <!-- <a href="/{$toBackDoor}/access" class="btn btn-info btn-lg"><i class="fa fa-lock"></i> Manage Locks</a> -->
+                <!-- <a href="/{$toBackDoor}/access" class="btn btn-warning btn-lg"><i class="fa fa-key"></i> Master Key</a> -->
+            </div>  
+        </section>
+    </div>
 
+    {include file="~widgets/col.tpl" col=12 method="settings" title="$HTTP_HOST Settings"}
+    
 
-#x-desktop{
-	overflow: auto;
-}
- 
+</div> 
+<script type="text/javascript" src="/x/html/layout/watchtower/js/grid-live.js"> </script>
 
-div.wwwsetup button {
-	width  : 300px;
-	height : 300px;
-	border-radius: 1000px;
-}
-
-
-</style>
-
-<table width="75%" align="center">
-	<tr>
-		<td align="center"> 
-			<div class="wwwsetup"> 
-				<button style="float: left" onclick="location = '#/{$toBackDoor}/{$Xtra}/buildCss'" class="punch">
-					<img src="{$ICON.48}/Colours RGB.png" /> 
-					Minify CSS
-				</button>
-			 
-				<button style="float: left;" onclick="location = '#/{$toBackDoor}/{$Xtra}/buildJs'" class="punch">
-					<img src="{$ICON.256}/Blox.png"/>
-					Minify Javascript
-				</button>
-		 	
-				<button onclick="location = '#/{$toBackDoor}/update/syncDb'" style="float: left" value="Connect" class="punch">
-					<img src="{$ICON.48}dbplus.png">
-					Build Missing Tables
-				</button>  
-			</div> 
-		</td>
-	</tr>
-</table>
