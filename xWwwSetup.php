@@ -3,7 +3,7 @@
  * @author i@xtiv.net
  * @name Settings
  * @desc Setup Your Domain's www Settings
- * @version  v2.0.0
+ * @version  v2.0.1
  * @icon Tools.png
  * @mini wrench
  * @see construct
