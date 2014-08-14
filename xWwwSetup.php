@@ -234,22 +234,13 @@ class xWwwSetup extends Xengine {
 
 			if(!empty($_FILES['config']['name']['site_logo'])){
 
-
-
 				//$_POST['config']['site_logo'] = $_FILES['site_logo']['name'];
-				$logo_path = XPHP_DIR."/xWwwSetup/logo/";
-
-				if(!file_exists($logo_path)){
-					mkdir($logo_path);
-				}
-
-				$target_path = $logo_path.$_SERVER['HTTP_HOST'];
-
+				$target_path = SVR_FILES."/logos/";
 
 				if(!file_exists($target_path)){
 					mkdir($target_path);
 				}
-
+ 
 				if(!empty($_FILES)){
 					ob_start();
 						echo "<pre>";
