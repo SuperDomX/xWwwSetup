@@ -429,6 +429,21 @@ class xWwwSetup extends Xengine {
 
 		}
 
+		protected function xSettings($type)
+		{
+			switch ($type) {
+				case 'radio':
+				
+				break;
+				
+				default:
+					 
+				break;
+			}
+			
+			return $input;
+		}
+
 		function install(){
 			//ini_set('display_errors', 1);
 			$ERROR['msg'] =false;
