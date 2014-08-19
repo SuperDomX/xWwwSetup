@@ -228,9 +228,8 @@ class xWwwSetup extends Xengine {
 	 * @remoteName
 	 */
 	public function saveSettings($form=null){
-
+		$id = false;
 		if(isset($_POST['config'])){
-
 
 			if(!empty($_FILES['config']['name']['site_logo'])){
 
@@ -271,12 +270,12 @@ class xWwwSetup extends Xengine {
 				));
 
 				if( empty($option) ){
-					$q->Insert('config',array(
+					$id = $q->Insert('config',array(
 						'config_value' => $v,
 						'config_option'=> $k
 					));
 				} else {
-					$q->Update('config',array(
+					$id = $q->Update('config',array(
 						'config_value' => $v
 					),array(
 						'config_option'=> $k
@@ -286,10 +285,10 @@ class xWwwSetup extends Xengine {
 		}
 
 		return array(
-			'success'=>true,
-			'data'=> $form,
-			//'msg'=>'Success!',
-			//'title'=>'Did it!'
+			'success' => $id,
+			'data'    => $form,
+			'msg'     => ($id) ? "$k Saved Successfully ($v)" : '',
+			'error'   => $q->error
 		) ;
 
 		//$this->cleanExtForm($form);
