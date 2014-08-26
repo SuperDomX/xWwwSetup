@@ -3,7 +3,7 @@
  * @author i@xtiv.net
  * @name Settings
  * @desc Setup Your Domain's www Settings
- * @version  v2.0.1
+ * @version  v2.0.2
  * @icon Tools.png
  * @mini wrench
  * @see construct
@@ -38,13 +38,20 @@ class xWwwSetup extends Xengine {
 		
 	}
 
-	function readConfigs(){
+	function readConfigs($find=null,$filter=null){ 
 		if($q = $this->q()){
-			$config = $q->Select('*','config');
+			$w =  ($find) ? $q->Where(array(
+				'config_option' => "$find_"
+			),'LIKE') : null;
+
+			$config = $q->Select('*','config',$w);
 
 	    	foreach($config as $k => $v){
-	    		$this->set($v['config_option'],$v['config_value']);
-	    		$CFG[$v['config_option']] = $v['config_value'];
+	    		if($find)
+	    			$v['config_option'] = str_replace("$find_", "", $v['config_option']);
+
+				$this->set($v['config_option'],$v['config_value']);
+				$CFG[$v['config_option']] = $v['config_value'];
 	    	}
 	    	$this->set('CFG',$CFG);
 	    	return $CFG;	
@@ -70,12 +77,9 @@ class xWwwSetup extends Xengine {
 			$this->set('www_themex_admin','@panel');
 		}
 
-
 		// @DEPRECIATED
 		$style = ($X->atBackDoor) ? $this->_SET['www_costume_admin'] : $this->_SET['www_costume']; 
 		$this->_SET['HTML']['HEAD']['STYLE'] = $this->style($style);
-
-
 
 		if( isset($_POST['config']) && $this->Key['is']['admin'] )
 			return $this->saveSettings();
