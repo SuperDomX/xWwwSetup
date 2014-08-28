@@ -97,7 +97,7 @@ class xWwwSetup extends Xengine {
 		// 	foreach($lines as $num => $line){
 		// 		if(!$flagged){
 		// 			$flagged = (HTTP_HOST == trim($line)) ? true : $flagged;
-		// 		}
+	// 		}
 		// 	}
 		// 	if(!$flagged){
 		// 		addDom($file);
