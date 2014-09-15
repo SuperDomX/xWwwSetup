@@ -1,7 +1,7 @@
 <?php
 /**
  * @author i@xtiv.net
- * @name Settings
+ * @name Wallpaper
  * @desc Setup Your Domain's www Settings
  * @version  v2.0.2
  * @icon Tools.png
