@@ -1,11 +1,11 @@
 <?php
 /**
- * @author i@xtiv.net
- * @name Wallpaper
+ * @author heylisten@xtiv.net
+ * @name www Paper
  * @desc Setup Your Domain's www Settings
  * @version  v2.0.2
  * @icon Tools.png
- * @mini wrench
+ * @mini magic
  * @see construct
  * @link wwwSetup
  * @todo Make an interface!

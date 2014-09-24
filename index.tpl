@@ -1,3 +1,5 @@
+{include '~widgets/billboard.tpl'}
+
 <div class="row">
     <div class="col-md-12">
         <section class="widget">
