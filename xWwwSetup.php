@@ -1,17 +1,17 @@
 <?php
 /**
  * @author heylisten@xtiv.net
- * @name www Paper
- * @desc Setup Your Domain's www Settings
+ * @name Tour Guide
+ * @desc Walkthrough the Setup Your New Super Domain
  * @version  v2.0.2
  * @icon Tools.png
- * @mini magic
+ * @mini smile-o
  * @see construct
  * @link wwwSetup
  * @todo Make an interface!
- * @release beta
+ * @release delta
  * @todo
- * @beta true
+ * @delta true
  */
 class xWwwSetup extends Xengine {
 
@@ -36,6 +36,11 @@ class xWwwSetup extends Xengine {
 
 	function watchtowerFeed(){
 		
+	}
+
+	public function intro($value='')
+	{
+		# code...
 	}
 
 	function readConfigs($find=null,$filter=null){ 
