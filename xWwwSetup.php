@@ -1,16 +1,15 @@
 <?php
-/**
- * @author  @xopherdeep
- * @name    Wizard
- * @desc    Walkthrough the Setup Your New Super Domain
- * @version v2.0.2
- * @icon    Tools.png
- * @mini    magic
- * @see     settings 
- * @link    wwwSetup
- * @todo    Make an interface!
- * @delta true
- */
+  /**
+    * @name    Wizard
+    * @desc    Walkthrough the Setup Your New Super Domain
+    * @version v0.1(160710)
+    * @author  @xopherdeep
+    * @icon    Tools.png
+    * @mini    magic
+    * @see     settings
+    * @link    wwwSetup
+    * @delta true
+  **/
 class xWwwSetup extends Xengine {
   function __construct($c){
     // parent::__construct($c);
