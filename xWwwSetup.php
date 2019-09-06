@@ -123,7 +123,7 @@ class xWwwSetup extends Xengine {
       $q->setStartLimit(0,1000);
 
       // ok... we have a db file. but do we have a db!?
-      $elements = $q->Select('*','costume_'.$area);
+      $elements = $q->Select('*','costume_adminzone'.$area);
 
       $styles = null;
 
