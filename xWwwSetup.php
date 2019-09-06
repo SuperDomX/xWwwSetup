@@ -115,7 +115,7 @@ class xWwwSetup extends Xengine {
     $this->set('var',$var);
   }
 
-  public function style($area='users'){
+  public function style($area='adminzone'){
     if($q = $this->q()){
         
       // Get all the elements
@@ -123,7 +123,7 @@ class xWwwSetup extends Xengine {
       $q->setStartLimit(0,1000);
 
       // ok... we have a db file. but do we have a db!?
-      $elements = $q->Select('*','costume_adminzone'.$area);
+      $elements = $q->Select('*','costume_bdaysuite');
 
       $styles = null;
 
